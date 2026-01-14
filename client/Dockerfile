@@ -4,9 +4,9 @@ WORKDIR /app
 
 EXPOSE 5173
 
-COPY package.json /app/package.json
+COPY package.json /app
 
-COPY package-lock.json /app/package-lock.json
+COPY package-lock.json /app
 
 RUN npm install
 
