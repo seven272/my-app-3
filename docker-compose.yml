@@ -1,6 +1,5 @@
 networks:
-  default:
-    name: dev
+  dev:
 services:
   nginx:
     image: nginx:stable-alpine
