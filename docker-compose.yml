@@ -1,0 +1,29 @@
+networks:
+  default:
+    name: dev
+services:
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - './nginx.conf:/etc/nginx/nginx.conf'
+      - '/etc/letsencrypt:/etc/letsencrypt'
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - dev
+    restart: always
+  test_client:
+    build:
+      dockerfile: Dockerfile
+      context: ./client
+    container_name: test_client
+    hostname: test_client
+    env_file:
+      - ./client/.env
+    networks:
+      - dev
+    restart: always
