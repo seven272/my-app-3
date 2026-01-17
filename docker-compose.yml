@@ -6,12 +6,12 @@ services:
       - '450:443'
     volumes:
       - './nginx.conf:/etc/nginx/conf.d/default.conf'
-      - './nginx.conf:/etc/nginx/nginx.conf'
+      # - './nginx.conf:/etc/nginx/nginx.conf'
       - '/etc/letsencrypt:/etc/letsencrypt'
     depends_on:
       - test_client
     networks:
-      - test_front_tier
+      front_tier
     restart: always
   test_client:
     build:
@@ -24,8 +24,8 @@ services:
     env_file:
       - ./client/.env
     networks:
-      - test_front_tier
+      front_tier
     restart: always
 
 networks:
-  test_front_tier:
+  front_tier:
