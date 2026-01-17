@@ -19,7 +19,7 @@ services:
     container_name: test_client_container
     hostname: test_client_host
     ports:
-      - '3005:3000'
+      - '3005:5173'
     env_file:
       - ./client/.env
     networks:
