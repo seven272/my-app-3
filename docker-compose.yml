@@ -11,7 +11,7 @@ services:
     depends_on:
       - test_client
     networks:
-      front_tier
+      - front_tier
     restart: always
   test_client:
     build:
@@ -24,7 +24,7 @@ services:
     env_file:
       - ./client/.env
     networks:
-      front_tier
+      - front_tier
     restart: always
 
 networks:
