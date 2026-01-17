@@ -26,4 +26,5 @@ services:
       - test_front_tier
     restart: always
 
-networks: test_front_tier
+networks:
+  test_front_tier:
