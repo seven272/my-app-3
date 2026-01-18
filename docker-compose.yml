@@ -2,10 +2,10 @@ services:
   nginx:
     image: nginx:stable-alpine
     ports:
-      - '8080:80'
+      - '80:80'
       - '450:443'
     expose:
-      - '8080'
+      - '80'
     volumes:
       - './default.conf:/etc/nginx/conf.d/default.conf'
       - './nginx.conf:/etc/nginx/nginx.conf'
