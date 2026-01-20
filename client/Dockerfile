@@ -17,8 +17,8 @@ RUN npm run build
 FROM nginx:stable-alpine
 COPY --from=react-build /app/dist /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
-COPY --from=react-build /app/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=react-build /app/default.conf /etc/nginx/conf.d/default.conf
 RUN rm /etc/nginx/nginx.conf
-COPY --from=react-build /app/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY --from=react-build /app/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 4000
 CMD [ "nginx", "-g", "daemon off;" ]
