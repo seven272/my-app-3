@@ -11,7 +11,7 @@ export default defineConfig({
     // allowedHosts: ['prank-sound.ru'],
   },
   preview: {
-    port: 4500,
+    port: 6666,
     strictPort: true,
   },
 })
