@@ -20,5 +20,5 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY --from=react-build /app/default.conf /etc/nginx/conf.d/default.conf
 RUN rm /etc/nginx/nginx.conf
 COPY --from=react-build /app/nginx.conf /etc/nginx/nginx.conf
-EXPOSE 4000
+EXPOSE 3500
 CMD [ "nginx", "-g", "daemon off;" ]
