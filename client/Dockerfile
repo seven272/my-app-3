@@ -18,5 +18,5 @@ FROM nginx:stable-alpine
 COPY --from=react-build /app/dist /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY --from=react-build /app/default.conf /etc/nginx/conf.d/default.conf
-EXPOSE 3500
+EXPOSE 4010
 CMD [ "nginx", "-g", "daemon off;" ]
