@@ -1,5 +1,5 @@
 services:
-  nginx:
+  nginx-proxy:
     image: nginx:stable-alpine
     ports:
       - '8010:80'
